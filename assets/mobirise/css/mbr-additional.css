@@ -793,69 +793,8 @@ pre {
   border-radius: 100px !important;
 }
 .cid-qqfU1leVa6 {
-  background-color: #073b4c;
+  background-image: url("../../../assets/images/hexagonal-graphene-lattice-of-carbon-atoms-1920x1080.jpg");
 }
 .cid-qqfU1leVa6 H1 {
   text-align: center;
-}
-.cid-qqg8EyHCdp {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  background-color: #2e2e2e;
-}
-.cid-qqg8EyHCdp .media-container-row {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.cid-qqg8EyHCdp .media-container-row .foot-menu {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 0;
-  margin-bottom: 0;
-}
-.cid-qqg8EyHCdp .media-container-row .foot-menu li {
-  padding: 0 1rem 1rem 1rem;
-}
-.cid-qqg8EyHCdp .media-container-row .foot-menu li p {
-  margin: 0;
-}
-.cid-qqg8EyHCdp .media-container-row .social-list {
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  -webkit-justify-content: flex-end;
-}
-.cid-qqg8EyHCdp .media-container-row .social-list .mbr-iconfont-social {
-  font-size: 1.5rem;
-  color: #ffffff;
-}
-.cid-qqg8EyHCdp .media-container-row .social-list .soc-item {
-  margin: 0 .5rem;
-}
-.cid-qqg8EyHCdp .media-container-row .social-list a {
-  margin: 0;
-  opacity: .5;
-  -webkit-transition: .2s linear;
-  transition: .2s linear;
-}
-.cid-qqg8EyHCdp .media-container-row .social-list a:hover {
-  opacity: 1;
-}
-@media (max-width: 767px) {
-  .cid-qqg8EyHCdp .media-container-row .social-list {
-    justify-content: center;
-    -webkit-justify-content: center;
-  }
-}
-.cid-qqg8EyHCdp .media-container-row .row-copirayt {
-  word-break: break-word;
-}
-.cid-qqg8EyHCdp foot-menu-item {
-  text-align: right;
 }
