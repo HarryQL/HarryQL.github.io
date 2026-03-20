@@ -1,0 +1,552 @@
+---
+permalink: /portfolio/
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harry Liang — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #F9F8F6;
+      --bg-2:    #FFFFFF;
+      --text:    #0F0E0C;
+      --text-2:  #5C5A56;
+      --text-3:  #ABAAA6;
+      --accent:  #C4541C;
+      --accent-2:#E06830;
+      --line:    rgba(0,0,0,0.10);
+      --line-2:  rgba(0,0,0,0.05);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    main { padding-top: 0; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 80px 80px 80px;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-3); margin-bottom: 44px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .hero-eyebrow::before {
+      content: '—'; color: var(--accent);
+      font-size: 14px; line-height: 1;
+    }
+    .hero-headline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 900;
+      font-size: clamp(64px, 9vw, 136px);
+      line-height: 0.97; letter-spacing: -0.03em;
+      color: var(--text);
+      max-width: 820px;
+      margin-bottom: 44px;
+    }
+    .hero-headline em { font-style: italic; color: var(--accent); }
+    .hero-body {
+      font-size: 16px; line-height: 1.75;
+      color: var(--text-2); max-width: 520px;
+      margin-bottom: 52px; font-weight: 400;
+    }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 10px; }
+    .hero-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px; letter-spacing: 0.06em;
+      color: var(--text-2); padding: 6px 14px;
+      border: 1px solid var(--line); border-radius: 2px;
+    }
+    .hero-badge span { color: var(--text); font-weight: 500; }
+    .hero-scroll-hint {
+      position: absolute; bottom: 44px; right: 80px;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--text-3);
+      display: flex; align-items: center; gap: 10px;
+      animation: bob 2.2s ease-in-out infinite;
+    }
+    .hero-scroll-hint::after { content: '↓'; font-size: 13px; color: var(--accent); }
+    @keyframes bob { 0%,100% { transform: translateY(0) } 50% { transform: translateY(5px) } }
+
+    /* ── NUMBERS STRIP ── */
+    .numbers-strip {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      border-bottom: 1px solid var(--line);
+    }
+    .num-cell { padding: 52px 56px; border-right: 1px solid var(--line); }
+    .num-cell:last-child { border-right: none; }
+    .num-n {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(48px, 5.5vw, 80px);
+      line-height: 1; letter-spacing: -0.04em;
+      color: var(--text); margin-bottom: 10px;
+    }
+    .num-n em { color: var(--accent); font-style: normal; }
+    .num-l { font-size: 13px; line-height: 1.55; color: var(--text-2); max-width: 220px; }
+
+    /* ── SHARED SECTION WRAPPER ── */
+    .section { max-width: 1120px; margin: 0 auto; padding: 96px 80px; }
+    .section-divider { border-top: 1px solid var(--line); }
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--text-3); margin-bottom: 60px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+
+    /* ── WORK ACCORDION ── */
+    .work-list { border-top: 1px solid var(--line); }
+    .work-item { border-bottom: 1px solid var(--line); cursor: pointer; transition: background .18s; }
+    .work-item:hover { background: rgba(0,0,0,0.018); }
+    .work-header {
+      display: grid; grid-template-columns: 1.6fr 2fr 1fr 40px;
+      align-items: center; gap: 24px; padding: 26px 0; user-select: none;
+    }
+    .work-co { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 21px; letter-spacing: -0.02em; color: var(--text); }
+    .work-role { font-size: 13px; line-height: 1.45; color: var(--text-2); }
+    .work-dates { font-family: 'DM Mono', monospace; font-size: 10.5px; letter-spacing: 0.05em; color: var(--text-3); }
+    .work-toggle {
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; line-height: 1; color: var(--text-3);
+      transition: all .28s cubic-bezier(0.34,1.3,0.64,1);
+      flex-shrink: 0; justify-self: end;
+    }
+    .work-item.open .work-toggle { background: var(--accent); border-color: var(--accent); color: #fff; transform: rotate(45deg); }
+    .work-body { overflow: hidden; max-height: 0; transition: max-height .45s cubic-bezier(0.4,0,0.2,1); }
+    .work-item.open .work-body { max-height: 800px; }
+    .work-body-inner { display: grid; grid-template-columns: 1fr 260px; gap: 48px; align-items: start; padding-bottom: 36px; }
+    .work-bullets { list-style: none; display: flex; flex-direction: column; gap: 15px; }
+    .work-bullet { position: relative; padding-left: 22px; font-size: 14px; line-height: 1.7; color: var(--text-2); }
+    .work-bullet::before { content: ''; position: absolute; left: 0; top: 0.72em; width: 12px; height: 1px; background: var(--accent); }
+    .work-bullet strong { color: var(--text); font-weight: 600; }
+    .work-metric-box { background: var(--bg-2); border: 1px solid var(--line); border-radius: 8px; padding: 28px 24px; position: sticky; top: 60px; }
+    .work-metric-n { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 56px; line-height: 1; letter-spacing: -0.04em; color: var(--accent); margin-bottom: 8px; }
+    .work-metric-l { font-size: 12px; line-height: 1.55; color: var(--text-2); }
+
+    /* ── PHILOSOPHY ── */
+    .philosophy-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 80px; align-items: start; }
+    .philosophy-quote { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 44px); font-weight: 700; line-height: 1.22; letter-spacing: -0.02em; color: var(--text); position: sticky; top: 80px; }
+    .philosophy-quote em { color: var(--accent); font-style: italic; }
+    .philosophy-body p { font-size: 15px; line-height: 1.82; color: var(--text-2); margin-bottom: 24px; }
+    .philosophy-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+    .phil-tag { padding: 6px 14px; border-radius: 3px; font-size: 11.5px; font-weight: 500; border: 1px solid var(--line); color: var(--text-2); transition: border-color .2s, color .2s; }
+    .phil-tag:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── PRINCIPLES ── */
+    .principles-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .principle { padding: 48px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .principle:nth-child(even) { border-right: none; }
+    .principle:nth-child(n+3) { border-bottom: none; }
+    .p-num { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 20px; display: block; }
+    .p-title { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; line-height: 1.25; color: var(--text); margin-bottom: 14px; }
+    .p-body { font-size: 14px; line-height: 1.75; color: var(--text-2); }
+
+    /* ── EXPERTISE ── */
+    .expertise-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; }
+    .skill-col-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-3); margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag { padding: 5px 13px; border-radius: 3px; font-size: 12px; font-weight: 500; border: 1px solid var(--line); color: var(--text-2); transition: border-color .18s; }
+    .skill-tag:hover { border-color: var(--text-3); }
+    .skill-tag.key { border-color: rgba(196,84,28,0.30); color: var(--accent); background: rgba(196,84,28,0.05); }
+
+    /* ── EDUCATION ── */
+    .edu-row { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; padding-top: 52px; border-top: 1px solid var(--line); }
+    .edu-school { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 20px; letter-spacing: -0.01em; color: var(--text); margin-bottom: 5px; }
+    .edu-degree { font-size: 13px; color: var(--text-2); margin-bottom: 4px; }
+    .edu-meta { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.06em; color: var(--text-3); }
+
+    /* ── CONTACT ── */
+    .contact-section { border-top: 1px solid var(--line); padding: 120px 80px 100px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .contact-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-3); margin-bottom: 36px; }
+    .contact-heading { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(60px, 9vw, 120px); line-height: 0.95; letter-spacing: -0.04em; color: var(--text); margin-bottom: 56px; }
+    .contact-heading em { color: var(--accent); font-style: italic; }
+    .contact-btns { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .contact-btn { padding: 13px 32px; border-radius: 3px; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-decoration: none; transition: all .22s; font-family: 'Inter', sans-serif; }
+    .contact-btn.primary { background: var(--text); color: var(--bg); }
+    .contact-btn.primary:hover { background: var(--accent); }
+    .contact-btn.secondary { border: 1px solid var(--line); color: var(--text-2); }
+    .contact-btn.secondary:hover { border-color: var(--text-2); color: var(--text); }
+
+    /* ── FOOTER ── */
+    footer { border-top: 1px solid var(--line); padding: 24px 80px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-text { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: var(--text-3); }
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .75s ease, transform .75s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: .1s; }
+    .reveal-d2 { transition-delay: .2s; }
+    .reveal-d3 { transition-delay: .3s; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .hero { padding: 60px 24px 80px; }
+      .numbers-strip { grid-template-columns: 1fr 1fr; }
+      .num-cell { border-right: none; border-bottom: 1px solid var(--line); padding: 36px 28px; }
+      .num-cell:nth-child(odd) { border-right: 1px solid var(--line); }
+      .num-cell:last-child { border-bottom: none; }
+      .section { padding: 64px 24px; }
+      .work-header { grid-template-columns: 1fr 40px; }
+      .work-role, .work-dates { display: none; }
+      .work-body-inner { grid-template-columns: 1fr; }
+      .philosophy-grid { grid-template-columns: 1fr; gap: 40px; }
+      .philosophy-quote { position: static; font-size: 28px; }
+      .principles-grid { grid-template-columns: 1fr; }
+      .principle { border-right: none !important; }
+      .principle:nth-child(n+3) { border-bottom: 1px solid var(--line); }
+      .principle:last-child { border-bottom: none; }
+      .expertise-grid { grid-template-columns: 1fr; gap: 32px; }
+      .edu-row { grid-template-columns: 1fr; gap: 28px; }
+      .contact-section { padding: 80px 24px; }
+      footer { padding: 20px 24px; flex-direction: column; gap: 6px; }
+      .hero-scroll-hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-eyebrow">Senior Modeling Engineer · Palo Alto, CA</div>
+      <h1 class="hero-headline">Harry Liang</h1>
+      <p class="hero-body">My work focuses on AI for Science, combining physics-informed machine learning, multiphysics modeling, and large-scale scientific computing with real-world experimental and manufacturing data to accelerate the design and optimization of complex engineering systems.</p>
+      <div class="hero-badges">
+        <div class="hero-badge"><span>Tesla</span> · Senior Modeling Engineer</div>
+        <div class="hero-badge">Previously: <span>MIT Bazant Research Group · XtalPi</span></div>
+        <div class="hero-badge"><span>5+</span> roles in industry</div>
+      </div>
+      <div class="hero-scroll-hint">Scroll to explore</div>
+    </section>
+
+    <!-- NUMBERS STRIP -->
+    <div class="numbers-strip">
+
+      <div class="num-cell reveal">
+        <div class="num-n">4<em>–16×</em></div>
+        <div class="num-l">reduction in experimental samples via active learning</div>
+      </div>
+      <div class="num-cell reveal reveal-d1">
+        <div class="num-n">142<em></em></div>
+        <div class="num-l">novel crystals generated with targeted properties</div>
+      </div>
+      <div class="num-cell reveal reveal-d2">
+        <div class="num-n">43<em>+</em></div>
+        <div class="num-l">ML papers reviewed for top AI/science venues</div>
+      </div>
+      <div class="num-cell reveal reveal-d3">
+        <div class="num-n">11<em></em></div>
+        <div class="num-l">publications including NeurIPS, Matter, JACS</div>
+      </div>
+    </div>
+
+    <!-- WORK -->
+    <div class="section-divider">
+      <div class="section" id="work">
+        <div class="section-label">Work history</div>
+        <div class="work-list">
+
+          <div class="work-item" onclick="toggleWork(this)">
+            <div class="work-header">
+              <div class="work-co">Tesla</div>
+              <div class="work-role">Senior Modeling Engineer</div>
+              <div class="work-dates">Jun 2024 — Present</div>
+              <div class="work-toggle">+</div>
+            </div>
+            <div class="work-body">
+              <div class="work-body-inner">
+                <ul class="work-bullets">
+              <li class="work-bullet">Built <strong>scalable scientific computing pipelines</strong> integrating ML models, physics simulations, and large experimental datasets for automated calibration and firmware control</li>
+              <li class="work-bullet">Developed <strong>physics-informed neural network surrogates</strong> enabling real-time electrochemical state inference, deployed in firmware control systems</li>
+              <li class="work-bullet">Designed <strong>reinforcement learning workflows</strong> for autonomous model calibration across high-dimensional parameter spaces</li>
+              <li class="work-bullet">Led <strong>Bayesian optimization</strong> for model-driven electrode design, identifying optimal laser-ablated patterns for fast-charge performance</li>
+              <li class="work-bullet">Architected <strong>P2D electrochemical simulation frameworks</strong> quantifying current density non-uniformity across cylindrical and prismatic cell formats</li>
+              <li class="work-bullet">Developed <strong>fast-charge safety models</strong> defining physical operating boundaries for next-gen EVs and Megapack energy storage</li>
+                </ul>
+                <div class="work-metric-box">
+                  <div class="work-metric-n"></div>
+                  <div class="work-metric-l">Physics-informed ML and multiphysics modeling for automated simulation and optimization of next-generation batteries.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="work-item" onclick="toggleWork(this)">
+            <div class="work-header">
+              <div class="work-co">MIT Bazant Research Group</div>
+              <div class="work-role">Graduate Researcher</div>
+              <div class="work-dates">Sep 2021 — May 2024</div>
+              <div class="work-toggle">+</div>
+            </div>
+            <div class="work-body">
+              <div class="work-body-inner">
+                <ul class="work-bullets">
+              <li class="work-bullet">Developed <strong>interpretable ML models</strong> (GAM, XGBoost) on large-scale battery testing and manufacturing data to predict cell performance</li>
+              <li class="work-bullet">Built <strong>hybrid physics–ML frameworks</strong> combining electrochemical models with data-driven learning for cell-to-cell variation prediction</li>
+              <li class="work-bullet">Created physics-based models for <strong>implantable medical device batteries</strong>, optimizing CFx-SVO mix ratios for improved pulse performance</li>
+              <li class="work-bullet">Developed <strong>Hybrid-MPET, first open-source Python framework for multi-active material porous electrode battery simulation</strong></li>
+                </ul>
+                <div class="work-metric-box">
+                  <div class="work-metric-n"></div>
+                  <div class="work-metric-l">Physics-based and data-driven modeling of multi-active materials electrode batteries</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="work-item" onclick="toggleWork(this)">
+            <div class="work-header">
+              <div class="work-co">XtalPi</div>
+              <div class="work-role">Machine Learning Research Intern</div>
+              <div class="work-dates">Jun 2021 — Aug 2021</div>
+              <div class="work-toggle">+</div>
+            </div>
+            <div class="work-body">
+              <div class="work-body-inner">
+                <ul class="work-bullets">
+              <li class="work-bullet">Developed <strong>trust-region Bayesian optimization</strong> for data-efficient global optimization in high-dimensional pharmaceutical processes</li>
+              <li class="work-bullet">Created <strong>multi-objective Bayesian optimization</strong> algorithms autonomously optimizing bioprocess yield while minimizing byproducts</li>
+                </ul>
+                <div class="work-metric-box">
+                  <div class="work-metric-n"></div>
+                  <div class="work-metric-l">Bayesian optimization for data-efficient and closed-loop optimization of complex pharmaceutical production processes.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="work-item" onclick="toggleWork(this)">
+            <div class="work-header">
+              <div class="work-co">MIT Photovoltaics Lab &amp; CSAIL</div>
+              <div class="work-role">Graduate Researcher</div>
+              <div class="work-dates">Sep 2019 — Aug 2021</div>
+              <div class="work-toggle">+</div>
+            </div>
+            <div class="work-body">
+              <div class="work-body-inner">
+                <ul class="work-bullets">
+              <li class="work-bullet">Developed <strong>generative AI framework</strong> using VAEs for inverse design of inorganic crystals with targeted electronic properties</li>
+              <li class="work-bullet"><strong>Generated 142 new candidate crystals</strong> with targeted electronic properties, validated via first-principles DFT simulations</li>
+              <li class="work-bullet">Built <strong>active learning and Bayesian optimization</strong> strategies achieving 4–16× reduction in experimental sample requirements</li>
+              <li class="work-bullet">Developed <strong>graph neural networks</strong> predicting antibiotic efficacy, enhanced via transfer learning for structure–property relationships</li>
+                </ul>
+                <div class="work-metric-box">
+                  <div class="work-metric-n"></div>
+                  <div class="work-metric-l">Machine learning accelerated scientific discovery in materials and molecular systems.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="work-item" onclick="toggleWork(this)">
+            <div class="work-header">
+              <div class="work-co">Lawrence Berkeley National Laboratory</div>
+              <div class="work-role">Researcher</div>
+              <div class="work-dates">Jan 2018 — May 2019</div>
+              <div class="work-toggle">+</div>
+            </div>
+            <div class="work-body">
+              <div class="work-body-inner">
+                <ul class="work-bullets">
+              <li class="work-bullet">Developed and launched <strong>first open-source DFT Raman spectra database for the Materials Project</strong></li>
+              <li class="work-bullet">Executed large-scale first-principles simulations on high-performance computing (HPC) clusters as part of the U.S. Materials Genome Initiative</li>
+                </ul>
+                <div class="work-metric-box">
+                  <div class="work-metric-n"></div>
+                  <div class="work-metric-l">Data-driven computational materials science research.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHILOSOPHY -->
+    <div class="section-divider">
+      <div class="section" id="philosophy">
+        <div class="section-label">Philosophy</div>
+        <div class="philosophy-grid">
+          <div class="philosophy-quote reveal">
+            "The most powerful AI systems aren't the ones that ignore physics—they're the ones that deeply understand it and use machine learning to go beyond what equations alone can solve."
+          </div>
+          <div class="philosophy-body reveal reveal-d1">
+            <p>My path from Berkeley to MIT to Tesla has been defined by one consistent thread: making AI genuinely useful for scientific discovery and real world physical applications. At MIT, I built generative models that designed novel crystals and developed Bayesian optimization frameworks that reduced experimental costs by an order of magnitude. Now at Tesla, I'm applying those same principles to batteries—creating physics-informed neural networks that run in real-time firmware while respecting the electrochemistry that governs how cells actually behave.</p>
+            <p>I approach problems by first understanding the underlying science deeply, then identifying where ML/AI can provide leverage that pure simulation cannot. Whether it's using reinforcement learning for autonomous calibration, Bayesian optimization for experiment design, or neural network surrogates for real-time inference, the goal is always the same: build systems that are scientifically grounded, computationally tractable, and deployable in the real world.</p>
+            <div class="philosophy-tags">
+              <span class="phil-tag">Physics-informed ML</span>
+              <span class="phil-tag">Autonomous Discovery</span>
+              <span class="phil-tag">Battery Science</span>
+              <span class="phil-tag">Scientific Computing</span>
+              <span class="phil-tag">AI for Science</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOW I WORK -->
+    <div class="section-divider">
+      <div class="section">
+        <div class="section-label">How I work</div>
+        <div class="principles-grid">
+
+          <div class="principle reveal">
+            <span class="p-num">01</span>
+            <div class="p-title">Physics First, Learning Second</div>
+            <p class="p-body">Every ML model I build starts with some level of physical understanding. Understanding governing equations, conservation laws, and system constraints isn't just good practice—it's what separates ML models that generalize from those that fail in production.</p>
+          </div>
+
+          <div class="principle reveal">
+            <span class="p-num">02</span>
+            <div class="p-title">Close the Loop</div>
+            <p class="p-body">The most impactful research connects seamlessly to action. I design systems for autonomous operation—from Bayesian optimization that runs experiments to physics-informed networks deployed in firmware control loops.</p>
+          </div>
+
+          <div class="principle reveal">
+            <span class="p-num">03</span>
+            <div class="p-title">Interpretability Enables Trust</div>
+            <p class="p-body">Black-box predictions aren't enough when safety matters. I prioritize interpretable models and hybrid approaches that let domain experts understand and validate what the AI is learning.</p>
+          </div>
+
+          <div class="principle reveal">
+            <span class="p-num">04</span>
+            <div class="p-title">Open Science Compounds</div>
+            <p class="p-body">From Hybrid-MPET battery simulation software, Bayesian Optimization framework, to the Materials Project Raman database, I believe open-source tools multiply impact. The best way to advance a field is to give others the infrastructure to build on your work.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERTISE -->
+    <div class="section-divider">
+      <div class="section" id="expertise">
+        <div class="section-label">Expertise</div>
+        <div class="expertise-grid">
+
+          <div>
+            <div class="skill-col-label">Machine Learning &amp; AI</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Autonomous scientific workflows</span>
+              <span class="skill-tag key">Generative models</span>
+              <span class="skill-tag">Deep learning</span>
+              <span class="skill-tag key">Reinforcement learning</span>
+              <span class="skill-tag key">Bayesian optimization</span>
+              <span class="skill-tag">Surrogate modeling</span>
+              <span class="skill-tag">Inverse design</span>
+              <span class="skill-tag key">Physics-informed neural networks</span>
+              <span class="skill-tag">Graph neural networks</span>
+              <span class="skill-tag">Active learning</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="skill-col-label">Programming &amp; Computing</div>
+            <div class="skill-tags">
+              <span class="skill-tag key">Python</span>
+              <span class="skill-tag key">PyTorch</span>
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">pandas</span>
+              <span class="skill-tag">NumPy</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">MATLAB</span>
+              <span class="skill-tag">High-performance computing (HPC)</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="skill-col-label">Scientific Modeling</div>
+            <div class="skill-tags">
+              <span class="skill-tag key">Multiphysics simulation</span>
+              <span class="skill-tag">Electrochemical battery modeling (P2D)</span>
+              <span class="skill-tag">COMSOL</span>
+              <span class="skill-tag">First-principles DFT</span>
+              <span class="skill-tag">Computational materials science</span>
+            </div>
+          </div>
+        </div>
+        <div class="edu-row">
+
+          <div>
+            <div class="edu-school">Massachusetts Institute of Technology</div>
+            <div class="edu-degree">Ph.D. Computational Science &amp; Materials Science</div>
+            <div class="edu-meta">2024 · Advisor: Martin Z. Bazant</div>
+          </div>
+
+          <div>
+            <div class="edu-school">Massachusetts Institute of Technology</div>
+            <div class="edu-degree">M.S. Materials Science and Engineering</div>
+            <div class="edu-meta">2021 · Advisor: Tonio Buonassisi, John Fisher lll</div>
+          </div>
+
+          <div>
+            <div class="edu-school">University of California, Berkeley</div>
+            <div class="edu-degree">B.S. Materials Science and Engineering</div>
+            <div class="edu-meta">2019 · Minor: EECS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="contact-eyebrow">Get in touch</div>
+      <h2 class="contact-heading reveal">
+        Let's build<br><em>something.</em>
+      </h2>
+      <div class="contact-btns">
+        <a href="mailto:liangqiaohao@gmail.com" class="contact-btn primary">Send a message</a>
+        <a href="https://linkedin.com/in/harliang" class="contact-btn secondary" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/harliang" class="contact-btn secondary" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-text">Harry Liang · 2026</div>
+      <div class="footer-text">Senior Modeling Engineer · Palo Alto, CA</div>
+    </footer>
+
+  </main>
+
+  <script>
+    function toggleWork(item) {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.work-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => revealObs.observe(el));
+  </script>
+
+</body>
+</html>
