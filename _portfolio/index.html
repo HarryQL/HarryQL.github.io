@@ -175,14 +175,23 @@ title: ""
     .work-item.open .work-toggle { background: var(--accent); border-color: var(--accent); color: #fff; transform: rotate(45deg); }
     .work-body { overflow: hidden; max-height: 0; transition: max-height .45s cubic-bezier(0.4,0,0.2,1); }
     .work-item.open .work-body { max-height: 800px; }
-    .work-body-inner { display: grid; grid-template-columns: 1fr 260px; gap: 48px; align-items: start; padding-bottom: 36px; }
     .work-bullets { list-style: none; display: flex; flex-direction: column; gap: 15px; }
     .work-bullet { position: relative; padding-left: 22px; font-size: 12px; line-height: 1.7; color: var(--text-2); }
     .work-bullet::before { content: ''; position: absolute; left: 0; top: 0.72em; width: 12px; height: 1px; background: var(--accent); }
     .work-bullet strong { color: var(--text); font-weight: 600; }
-    .work-metric-box { background: var(--bg-2); border: 1px solid var(--line); border-radius: 8px; padding: 28px 24px; position: sticky; top: 60px; }
-    .work-metric-n { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 56px; line-height: 1; letter-spacing: -0.04em; color: var(--accent); margin-bottom: 8px; }
-    .work-metric-l { font-size: 12px; line-height: 1.55; color: var(--text-2); }
+    .work-body-inner {
+      display: block;
+      padding-bottom: 24px;
+    }
+    .work-summary {
+      font-size: 18px;
+      line-height: 1.5;
+      color: var(--text-2);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      margin-bottom: 14px;
+    }
 
     /* ── PHILOSOPHY ── */
     .philosophy-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 80px; align-items: start; }
@@ -386,6 +395,9 @@ title: ""
             </div>
             <div class="work-body">
               <div class="work-body-inner">
+                <div class="work-summary">
+                Physics-informed ML and multiphysics modeling for automated simulation and optimization of next-generation batteries.
+                </div>
                 <ul class="work-bullets">
               <li class="work-bullet">Built <strong>scalable scientific computing pipelines</strong> integrating ML models, physics simulations, and large experimental datasets for automated calibration and firmware control</li>
               <li class="work-bullet">Developed <strong>physics-informed neural network surrogates</strong> enabling real-time electrochemical state inference, deployed in firmware control systems</li>
@@ -394,10 +406,6 @@ title: ""
               <li class="work-bullet">Architected <strong>P2D electrochemical simulation frameworks</strong> quantifying current density non-uniformity across cylindrical and prismatic cell formats</li>
               <li class="work-bullet">Developed <strong>fast-charge safety models</strong> defining physical operating boundaries for next-gen EVs and Megapack energy storage</li>
                 </ul>
-                <div class="work-metric-box">
-                  <div class="work-metric-n"></div>
-                  <div class="work-metric-l">Physics-informed ML and multiphysics modeling for automated simulation and optimization of next-generation batteries.</div>
-                </div>
               </div>
             </div>
           </div>
@@ -411,15 +419,15 @@ title: ""
             </div>
             <div class="work-body">
               <div class="work-body-inner">
+                <div class="work-summary">
+                Physics-based and data-driven modeling of multi-active materials electrode batteries.
+                </div>
                 <ul class="work-bullets">
               <li class="work-bullet">Developed <strong>interpretable ML models</strong> (GAM, XGBoost) on large-scale battery testing and manufacturing data to predict cell performance</li>
               <li class="work-bullet">Built <strong>hybrid physics–ML frameworks</strong> combining electrochemical models with data-driven learning for cell-to-cell variation prediction</li>
               <li class="work-bullet">Created physics-based models for <strong>implantable medical device batteries</strong>, optimizing CFx-SVO mix ratios for improved pulse performance</li>
               <li class="work-bullet">Developed <strong>Hybrid-MPET, first open-source Python framework for multi-active material porous electrode battery simulation</strong></li>
                 </ul>
-                <div class="work-metric-box">
-                  <div class="work-metric-n"></div>
-                  <div class="work-metric-l">Physics-based and data-driven modeling of multi-active materials electrode batteries</div>
                 </div>
               </div>
             </div>
@@ -434,14 +442,14 @@ title: ""
             </div>
             <div class="work-body">
               <div class="work-body-inner">
+                <div class="work-summary">
+                Physics-based battery modeling to support engineering decisions.
+                </div>
                 <ul class="work-bullets">
               <li class="work-bullet">Developed 3D porous electrode (P2D) models to study the impact of manufacturing deviation on Li plating for Tesla in-house cells and support management decision making.</li>
               <li class="work-bullet">Developed parallel unit-cell type P2D models that account for cylindrical cell non-uniformities (temperature, curvature, manufacturing deviation, etc.). Improved the speed to generate fast charge profiles for Tesla in-house cells, reduced from >24 hours to < 20 minutes.</li>
               <li class="work-bullet"><strong>Proposed and validated new theoretical relations</strong> in the field of porous electrode modeling to break down direct current resistance (DCR) Li-ion batteries with multi-active material electrodes.</li>
                 </ul>
-                <div class="work-metric-box">
-                  <div class="work-metric-n"></div>
-                  <div class="work-metric-l">Physics-based battery modeling to support engineering decisions.</div>
                 </div>
               </div>
             </div>
@@ -456,13 +464,13 @@ title: ""
             </div>
             <div class="work-body">
               <div class="work-body-inner">
+                <div class="work-summary">
+                Bayesian optimization for data-efficient and closed-loop optimization of complex pharmaceutical production processes.
+                </div>
                 <ul class="work-bullets">
               <li class="work-bullet">Developed <strong>trust-region Bayesian optimization</strong> for data-efficient global optimization in high-dimensional pharmaceutical processes</li>
               <li class="work-bullet">Created <strong>multi-objective Bayesian optimization</strong> algorithms autonomously optimizing bioprocess yield while minimizing byproducts</li>
                 </ul>
-                <div class="work-metric-box">
-                  <div class="work-metric-n"></div>
-                  <div class="work-metric-l">Bayesian optimization for data-efficient and closed-loop optimization of complex pharmaceutical production processes.</div>
                 </div>
               </div>
             </div>
@@ -477,15 +485,15 @@ title: ""
             </div>
             <div class="work-body">
               <div class="work-body-inner">
+                <div class="work-summary">
+                Machine learning accelerated scientific discovery in materials and molecular systems.
+                </div>
                 <ul class="work-bullets">
               <li class="work-bullet">Developed <strong>generative AI framework</strong> using VAEs for inverse design of inorganic crystals with targeted electronic properties</li>
               <li class="work-bullet"><strong>Generated 142 new candidate crystals</strong> with targeted electronic properties, validated via first-principles DFT simulations</li>
               <li class="work-bullet">Built <strong>active learning and Bayesian optimization</strong> strategies achieving 4–16× reduction in experimental sample requirements</li>
               <li class="work-bullet">Developed <strong>graph neural networks</strong> predicting antibiotic efficacy, enhanced via transfer learning for structure–property relationships</li>
                 </ul>
-                <div class="work-metric-box">
-                  <div class="work-metric-n"></div>
-                  <div class="work-metric-l">Machine learning accelerated scientific discovery in materials and molecular systems.</div>
                 </div>
               </div>
             </div>
@@ -500,13 +508,13 @@ title: ""
             </div>
             <div class="work-body">
               <div class="work-body-inner">
+                <div class="work-summary">
+                Data-driven computational materials science research.
+                </div>
                 <ul class="work-bullets">
               <li class="work-bullet">Developed and launched <strong>first open-source DFT Raman spectra database for the Materials Project</strong></li>
               <li class="work-bullet">Executed large-scale first-principles simulations on high-performance computing (HPC) clusters as part of the U.S. Materials Genome Initiative</li>
                 </ul>
-                <div class="work-metric-box">
-                  <div class="work-metric-n"></div>
-                  <div class="work-metric-l">Data-driven computational materials science research.</div>
                 </div>
               </div>
             </div>
