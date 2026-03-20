@@ -24,7 +24,7 @@ repository               : "HarryQL/HarryQL.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "Harry_Liang_photo.jpeg"
   name             : "Harry Liang"
   pronouns         : # example: "she/her"  
   bio              : "MIT PhD | AI for Science | Battery"
