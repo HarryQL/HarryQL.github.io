@@ -65,8 +65,8 @@ title: ""
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding: 80px 40px;
+      justify-content: flex-start;   /* ← changed */
+      padding: 120px 40px 80px;     /* ← add top bias */
       border-bottom: 1px solid var(--line);
       position: relative;
     }
@@ -91,9 +91,12 @@ title: ""
     }
     .hero-headline em { font-style: italic; color: var(--accent); }
     .hero-body {
-      font-size: 16px; line-height: 1.75;
-      color: var(--text-2); max-width: 520px;
-      margin-bottom: 52px; font-weight: 400;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text-2);
+      max-width: min(720px, 60%);
+      margin-bottom: 52px;
+      font-weight: 400;
     }
     .hero-badges { display: flex; flex-wrap: wrap; gap: 10px; }
     .hero-badge {
