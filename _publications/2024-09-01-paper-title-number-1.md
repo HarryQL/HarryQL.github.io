@@ -2,7 +2,7 @@
 title: "Modeling of pulse and relaxation of high-rate Li/CFx-SVO batteries in implantable medical devices"
 collection: publications
 category: manuscripts
-permalink: /publication/2009-10-01-paper-title-number-1
+permalink: /publication/2024-09-01-paper-title-number-1
 date: 2024-09-01
 venue: 'Journal of Power Sources'
 paperurl: 'https://harryql.github.io/files/Exhibit15_Evidence.pdf'
