@@ -11,26 +11,133 @@ author_profile: true
 
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
+<style>
+.pub-year-section {
+  border-top: 1px solid #d9d9d9;
+  margin-top: 28px;
+  padding-top: 18px;
+}
+
+.pub-year-header {
+  font-size: 30px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 18px;
+}
+
+.pub-item {
+  display: grid;
+  grid-template-columns: 110px 1fr 80px;
+  gap: 18px;
+  padding: 22px 0;
+  align-items: start;
+}
+
+.pub-badge {
+  display: inline-block;
+  background: #b012b0;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1;
+  padding: 6px 12px;
+  border-radius: 3px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.16);
+  white-space: nowrap;
+}
+
+.pub-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #111;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+
+.pub-authors {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.my-name {
+  color: #000;
+  font-weight: 800;
+}
+
+.pub-links {
+  margin-top: 8px;
+  display: flex;
+  gap: 10px;
+}
+
+.pub-link-btn {
+  display: inline-block;
+  border: 1px solid #222;
+  padding: 4px 14px;
+  font-size: 12px;
+  color: #111;
+  text-decoration: none;
+}
+
+.pub-link-btn:hover {
+  text-decoration: none;
+  background: #f5f5f5;
+}
+
+.pub-year {
+  font-size: 18px;
+  color: #d0d0d0;
+  font-weight: 300;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .pub-item {
+    grid-template-columns: 1fr;
+  }
+
+  .pub-year {
+    text-align: left;
+    margin-top: 8px;
+  }
+}
+</style>
+
+{% assign pubs_by_year = site.publications | sort: "date" | reverse | group_by_exp: "post", "post.year" %}
+
+{% for year_group in pubs_by_year %}
+  <div class="pub-year-section">
+    <div class="pub-year-header">{{ year_group.name }}</div>
+
+    {% for post in year_group.items %}
+      <div class="pub-item">
+        <div>
+          {% if post.journal_short %}
+            <span class="pub-badge">{{ post.journal_short }}</span>
+          {% endif %}
+        </div>
+
+        <div>
+          <div class="pub-title">
+            <a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
+          </div>
+
+          {% if post.authors_html %}
+            <div class="pub-authors">{{ post.authors_html }}</div>
+          {% endif %}
+
+          <div class="pub-links">
+            {% if post.paperurl %}
+              <a class="pub-link-btn" href="{{ post.paperurl }}">HTML</a>
+            {% endif %}
+            <a class="pub-link-btn" href="{{ base_path }}{{ post.url }}">ABS</a>
+          </div>
+        </div>
+
+        <div class="pub-year">{{ post.year }}</div>
+      </div>
     {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
-
-
-
+  </div>
+{% endfor %}
