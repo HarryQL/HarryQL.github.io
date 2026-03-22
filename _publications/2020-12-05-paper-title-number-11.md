@@ -2,7 +2,7 @@
 title: "Benchmarking the Performance of Bayesian Optimization across Multiple Experimental Materials Science Domains"
 collection: publications
 category: manuscripts
-permalink: /publication/2020-12-05-paper-title-number-2
+permalink: /publication/2020-12-05-paper-title-number-11
 date: 2020-12-05
 year: 2020
 venue: 'NeurIPS 2020 Machine learning and the Physical Sciences Workshop'
