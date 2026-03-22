@@ -1,0 +1,105 @@
+---
+layout: archive
+title: "ML Community"
+permalink: /ml-community/
+author_profile: true
+---
+
+<div class="wordwrap">
+  Selected reviewing, service, and community contributions in machine learning and AI for science.
+</div>
+
+<style>
+.ml-year-section {
+  border-top: 1px solid #d9d9d9;
+  margin-top: 28px;
+  padding-top: 18px;
+}
+
+.ml-year-header {
+  font-size: 30px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 18px;
+}
+
+.ml-item {
+  display: grid;
+  grid-template-columns: 140px 1fr 80px;
+  gap: 16px;
+  padding: 22px 0;
+  align-items: start;
+}
+
+.ml-badge {
+  display: inline-block;
+  background: #F59D8C;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.ml-title {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.ml-desc {
+  font-size: 15px;
+  line-height: 1.55;
+  color: #333;
+}
+
+.ml-year {
+  font-size: 18px;
+  color: #d0d0d0;
+  font-weight: 300;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .ml-item {
+    grid-template-columns: 1fr;
+  }
+
+  .ml-year {
+    text-align: left;
+    margin-top: 8px;
+  }
+}
+</style>
+
+{% assign ml_by_year = site.ml-community | sort: "date" | reverse | group_by_exp: "post", "post.year" %}
+
+{% for year_group in ml_by_year %}
+  <div class="ml-year-section">
+    <div class="ml-year-header">{{ year_group.name }}</div>
+
+    {% for post in year_group.items %}
+      <div class="ml-item">
+        <div>
+          {% if post.badge %}
+            <span class="ml-badge">{{ post.badge }}</span>
+          {% endif %}
+        </div>
+
+        <div>
+          <div class="ml-title">{{ post.title }}</div>
+          {% if post.description %}
+            <div class="ml-desc">{{ post.description }}</div>
+          {% endif %}
+        </div>
+
+        <div class="ml-year">{{ post.year }}</div>
+      </div>
+    {% endfor %}
+  </div>
+{% endfor %}
