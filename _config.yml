@@ -233,7 +233,7 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
-  ml-community:
+  ml_community:
     output: true
     permalink: /:collection/:path/
 
@@ -293,10 +293,10 @@ defaults:
       layout: talk
       author_profile: true
       share: true
-  # _ml-community
+  # _ml_community
   - scope:
       path: ""
-      type: ml-community
+      type: ml_community
     values:
       layout: single
       author_profile: true
