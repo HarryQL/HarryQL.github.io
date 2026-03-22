@@ -233,6 +233,9 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  ml-community:
+    output: true
+    permalink: /:collection/:path/
 
 
 # These settings control how pages and collections are included in the site
@@ -290,6 +293,13 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+  # _ml-community
+  - scope:
+      path: ""
+      type: ml-community
+    values:
+      layout: single
+      author_profile: true
 
 
 # Sass/SCSS
