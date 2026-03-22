@@ -35,7 +35,14 @@ author_profile: true
 
 .pub-badge {
   display: inline-block;
-  margin-top: 4px;  
+  background: #F59D8C;   /* 🔥 your requested color */
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .pub-title {
@@ -123,9 +130,8 @@ author_profile: true
 
           <div class="pub-links">
             {% if post.paperurl %}
-              <a class="pub-link-btn" href="{{ post.paperurl }}">HTML</a>
+              <a class="pub-link-btn" href="{{ post.paperurl }}">Download</a>
             {% endif %}
-            <a class="pub-link-btn" href="{{ base_path }}{{ post.url }}">ABS</a>
           </div>
         </div>
 
