@@ -7,6 +7,6 @@ date: 2024-09-01
 year: 2024
 venue: 'Journal of Power Sources'
 paperurl: 'https://harryql.github.io/files/Exhibit15_Evidence.pdf'
-authors_html: "<strong class='my-name'>Qiaohao Liang</strong>, G. Galuppini, P.M. Gomadam, P.A. Tamirisa, J.A. Lemmerman, M.J. Mazack, M.G. Sullivan, R.D. Braatz, and M.Z. Bazant"
+authors_html: "<strong class='my-name'>Qiaohao Liang</strong>, Giacomo Galuppini, Partha M Gomadam, Prabhakar A Tamirisa, Jeffrey A Lemmerman, Michael J.M. Mazack, Melani G Sullivan, Richard D Braatz, and Martin Z Bazant"
 journal_short: 'J. Power Sources'
 ---
