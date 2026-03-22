@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "ML Community"
-permalink: /ml-community/
+permalink: /ml_community/
 author_profile: true
 ---
 
@@ -77,7 +77,7 @@ author_profile: true
 }
 </style>
 
-{% assign ml_by_year = site.ml-community | sort: "date" | reverse | group_by_exp: "post", "post.year" %}
+{% assign ml_by_year = site.ml_community | sort: "date" | reverse | group_by_exp: "post", "post.year" %}
 
 {% for year_group in ml_by_year %}
   <div class="ml-year-section">
