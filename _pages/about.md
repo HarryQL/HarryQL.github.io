@@ -6,6 +6,8 @@ redirect_from:
   - /about/
   - /about.html
 ---
+
+
 <!--
 This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. Incidentally, these same features make it a great template for anyone that needs to show off a professional template!
 
@@ -17,7 +19,9 @@ You can fork [this template](https://github.com/academicpages/academicpages.gith
 
 I am currently a **Senior Modeling Engineer at Tesla**, where I develop multiphysics and physics-informed ML models to **improve fast-charge performance and define safe operating boundaries** for batteries powering next-generation EVs and Megapack energy storage systems. I also develop **AI agents that orchestrate multiphysics simulation and machine learning models to automate end-to-end** model construction, calibration, and validation, enabling production-ready model-based control strategies.
 
-Previously, while completing my PhD research, I worked on [**generative models for materials design**](https://www.cell.com/matter/fulltext/S2590-2385(21)00625-1), [**Bayesian optimization for data-efficient materials discovery**](https://www.nature.com/articles/s41524-021-00656-9), [**open-source battery simulation software**](https://iopscience.iop.org/article/10.1149/1945-7111/acf47f/meta), and [**hybrid physics+ML residual learning framework**](https://dspace.mit.edu/handle/1721.1/155373). I also worked at [**XtalPi (AI+drug discovery)**](https://en.xtalpi.com/), applying machine learning and Bayesian optimization to [**high-dimentional and multi-objective optimization**](https://en.xtalpi.com/) of complex pharmaceutical production processes.
+<p style="text-align: justify;">
+Previously, while completing my PhD research, I worked on [**generative models for materials design**](https://www.cell.com/matter/fulltext/S2590-2385(21)00625-1), [**Bayesian optimization for data-efficient materials discovery**](https://www.nature.com/articles/s41524-021-00656-9), [**open-source battery simulation software**](https://iopscience.iop.org/article/10.1149/1945-7111/acf47f/meta), and [**hybrid physics+ML residual learning framework**](https://dspace.mit.edu/handle/1721.1/155373). I also worked at [**XtalPi (AI+drug discovery)**](https://en.xtalpi.com/), applying machine learning and Bayesian optimization to [**high-dimentional and multi-objective optimization**](https://openreview.net/forum?id=UVdSYXMNdOe) of complex pharmaceutical production processes.
+</p>
 
 I hold a Ph.D. in Computational Science and Materials Science and Engineering from **Massachusetts Institute of Technology (MIT)** and a B.S. in Materials Science and Engineering with a minor in Electrical Engineering and Computer Science from **UC Berkeley**.
 
