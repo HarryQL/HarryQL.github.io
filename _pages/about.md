@@ -11,11 +11,13 @@ This is the front page of a website that is powered by the [Academic Pages templ
 
 You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and Markdown files, add your own PDFs and other content, and have your own site for free, with no ads!-->
 
-I work on AI for real-world physical systems and AI for Science, translating experimental and manufacturing data into deployable engineering solutions using physics-informed machine learning and large-scale scientific computing.
+My work focuses on AI for real-world physical systems and AI for Science.
+
+I translate experimental and manufacturing data into deployable engineering solutions using physics-informed machine learning and large-scale scientific computing.
 
 I am currently a Senior Modeling Engineer at Tesla, where I develop multiphysics and physics-informed ML models to improve fast-charge performance and define safe operating boundaries for batteries powering next-generation EVs and Megapack energy storage systems. I also develop AI agents that orchestrate multiphysics simulation and machine learning models to automate end-to-end model construction, calibration, and validation, enabling production-ready model-based control strategies.
 
-Previously, while completing my PhD research, I worked on generative models for materials design, Bayesian optimization for data-efficient materials discovery, open-source battery simulation software, and hybrid physics-ML models. I also worked at XtalPi, applying machine learning and Bayesian optimization to autonomous optimization of complex pharmaceutical production processes.
+Previously, while completing my PhD research, I worked on generative models for materials design, Bayesian optimization for data-efficient materials discovery, open-source battery simulation software, and hybrid physics+ML residual learning framework. I also worked at [XtalPi](https://en.xtalpi.com/), applying machine learning and Bayesian optimization to autonomous optimization of complex pharmaceutical production processes.
 
 I hold a Ph.D. in Computational Science and Materials Science and Engineering from MIT and a B.S. in Materials Science and Engineering with a minor in Electrical Engineering and Computer Science from UC Berkeley.
 
