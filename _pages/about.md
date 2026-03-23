@@ -8,6 +8,7 @@ redirect_from:
 ---
 
 <div markdown="1" align="justify">
+  
 **My work focuses on AI for real-world physical systems and AI for Science.**
 
 **I translate experimental and manufacturing data into deployable engineering solutions using physics-informed machine learning and large-scale scientific computing.**
