@@ -19,3 +19,12 @@ Previously, while completing my PhD research, I worked on [**generative models f
 
 I hold a Ph.D. in Computational Science and Materials Science and Engineering from **Massachusetts Institute of Technology (MIT)** and a B.S. in Materials Science and Engineering with a minor in Electrical Engineering and Computer Science from **UC Berkeley**.
 </div>
+
+My thoughts on AI for real-world physical systems
+======
+<div markdown="1" align="justify">
+  
+My goal is to enable AI to actively participate in scientific reasoning and engineering design—not just as a tool for prediction, but as a system that helps turn data into decisions and models into instruments for interacting with the physical world. I am particularly interested in how data, models, and computation can be combined to understand and control complex physical systems, from batteries powering electric vehicles to large-scale energy infrastructure. At their core, these systems consist of interacting processes across multiple scales, where small changes in design or operation can lead to large differences in performance, safety, and lifetime.
+
+My work focuses on building computational frameworks that translate real-world data into predictive and actionable representations of these systems. By combining physics-based simulation with machine learning, I aim to capture both known mechanisms and unknown behaviors, and to develop systems that can continuously construct, calibrate, and refine these models as new data becomes available. More broadly, I am interested in closing the loop between observation, modeling, engineering decision-making, and manufacturing processes—so that AI systems can not only describe the physical world, but help shape how it is designed and operated.
+</div>
