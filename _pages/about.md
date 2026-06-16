@@ -12,7 +12,9 @@ redirect_from:
 **My work focuses on AI for real-world physical systems and AI for Science.**
 
 **I translate experimental and manufacturing data into deployable engineering solutions using physics-informed machine learning and large-scale scientific computing.**
-
+<span style="display:block; margin-top:6px; font-family:'DM Mono', monospace; font-size:0.95em; letter-spacing:0.08em; color:#C4541C; font-weight:500;">
+  Data &rarr; Models &rarr; Real-world solutions
+</span>
 I am currently a **Senior Modeling Engineer at Tesla**, where I develop multiphysics and physics-informed ML models to **improve fast-charge performance and define safe operating boundaries** for batteries powering next-generation EVs and Megapack energy storage systems. I am also developing **AI agents that orchestrate multiphysics simulation and machine learning to automate end-to-end modeling construction, calibration, and validation workflows**, enabling production-ready control strategies.
 
 Previously, while completing my PhD research, I worked on [**generative models for materials design**](https://www.cell.com/matter/fulltext/S2590-2385(21)00625-1), [**Bayesian optimization for data-efficient materials discovery**](https://www.nature.com/articles/s41524-021-00656-9), [**open-source battery simulation software**](https://iopscience.iop.org/article/10.1149/1945-7111/acf47f/meta), and [**hybrid physics+ML residual learning framework**](https://dspace.mit.edu/handle/1721.1/155373). I also worked at [**XtalPi (AI+drug discovery)**](https://en.xtalpi.com/), applying machine learning and Bayesian optimization to [**high-dimensional and multi-objective optimization**](https://openreview.net/forum?id=UVdSYXMNdOe) of complex pharmaceutical production processes.
